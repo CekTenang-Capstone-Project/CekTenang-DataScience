@@ -1,0 +1,15 @@
+rule,passed,details
+users.id unique,True,300 unique ids / 300 rows
+authentications.user_id exists in users,True,FK users -> authentications
+daily_activities.id unique,True,26984 unique ids / 26984 rows
+daily_activities user_id + activity_date unique,True,0 duplicate keys
+daily_activities social_media_hours <= screen_time_hours,True,logical consistency check
+stress_predictions.activity_id exists in daily_activities,True,FK daily_activities -> stress_predictions
+stress_predictions.activity_id unique,True,26579 unique activity ids / 26579 rows
+stress_score between 0 and 100,True,"min=21.0, max=92.83"
+stress_level valid,True,"{'Medium': 23256, 'High': 2583, 'Low': 740}"
+weekly_summaries user_id + week_start + week_end unique,True,0 duplicate keys
+recommendations period_type valid,True,"{'daily': 25951, 'weekly': 833}"
+insights period_type valid,True,"{'daily': 25951, 'weekly': 3600}"
+recommendations source id valid,True,daily uses stress_prediction_id; weekly uses weekly_summary_id
+insights source id valid,True,daily uses stress_prediction_id; weekly uses weekly_summary_id
