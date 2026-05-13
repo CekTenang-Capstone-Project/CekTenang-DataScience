@@ -1,0 +1,4 @@
+rule,passed
+weekly_summaries user_id + week_start + week_end unique,True
+stress_trend valid,True
+dominant_stress_level valid,True

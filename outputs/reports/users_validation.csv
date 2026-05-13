@@ -1,0 +1,4 @@
+rule,passed
+users.id unique,True
+users.email unique,True
+password_hash not null,True

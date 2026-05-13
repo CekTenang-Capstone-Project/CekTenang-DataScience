@@ -1,0 +1,4 @@
+rule,passed
+period_type valid,True
+daily source valid,True
+weekly source valid,True

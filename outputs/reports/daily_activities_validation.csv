@@ -1,0 +1,5 @@
+rule,passed
+daily_activities.id unique,True
+daily_activities user_id + activity_date unique,True
+social_media_hours <= screen_time_hours,True
+user_id exists in users,True

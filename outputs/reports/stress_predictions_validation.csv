@@ -1,0 +1,5 @@
+rule,passed
+stress_predictions.activity_id exists in daily_activities,True
+stress_predictions.activity_id unique,True
+stress_score between 0 and 100,True
+stress_level valid,True

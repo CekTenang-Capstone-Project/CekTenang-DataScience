@@ -1,0 +1,4 @@
+rule,passed
+authentications.id unique,True
+authentications.user_id exists in users,True
+token not null,True
