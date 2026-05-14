@@ -1,0 +1,14 @@
+feature,correlation_with_stress_score
+mood_score,-0.5190750450405959
+sleep_hours,-0.2699028663831177
+health_condition_score,-0.2531978379435566
+social_interaction_score,-0.14156088495812108
+physical_activity_minutes,-0.12848248940602192
+social_media_hours,-0.027276033250052213
+financial_worry_score,0.112063806140355
+caffeine_intake_mg,0.12440044078136198
+study_hours,0.22877571326330623
+screen_time_hours,0.2833154491323615
+assignment_load,0.4630167544619763
+deadline_pressure,0.5910610686252731
+fatigue_level,0.6315179111466017

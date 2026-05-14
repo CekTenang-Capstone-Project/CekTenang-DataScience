@@ -1,0 +1,24 @@
+kolom,tipe,format
+sleep_hours,original,numerik
+study_hours,original,numerik
+screen_time_hours,original,numerik
+social_media_hours,original,numerik
+physical_activity_minutes,original,numerik
+caffeine_intake_mg,original,numerik
+mood_score,original,numerik
+fatigue_level,original,numerik
+assignment_load,original,numerik
+deadline_pressure,original,numerik
+social_interaction_score,original,numerik
+financial_worry_score,original,numerik
+health_condition_score,original,numerik
+social_media_ratio,engineered,numerik/kategori
+study_screen_balance,engineered,numerik/kategori
+academic_pressure_index,engineered,numerik/kategori
+recovery_index,engineered,numerik/kategori
+digital_pressure_index,engineered,numerik/kategori
+emotional_pressure_index,engineered,numerik/kategori
+sleep_category,engineered,numerik/kategori
+activity_level,engineered,numerik/kategori
+caffeine_category,engineered,numerik/kategori
+stress_level,target,Low / Medium / High

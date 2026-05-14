@@ -1,0 +1,10 @@
+feature_baru,formula,alasan,basis_eda
+social_media_ratio,social_media_hours / screen_time_hours,Proporsi screen time untuk sosmed — lebih informatif dari nilai absolut,social_media_hours korelasi rendah jika berdiri sendiri
+study_screen_balance,study_hours / (screen_time_hours + 1),Rasio produktivitas vs konsumsi layar,"screen_time positif, study_hours juga positif terhadap stress — kombinasinya menarik"
+academic_pressure_index,(assignment_load + deadline_pressure) / 2,Gabungan dua fitur akademik teratas menjadi satu indeks tekanan,deadline_pressure & assignment_load top 2 korelasi & importance
+recovery_index,(sleep_hours * mood_score) / (fatigue_level + 1),"Indeks pemulihan — gabungan tidur, mood, dan kelelahan",Ketiganya masuk top fitur; pola recovery jelas di boxplot per stress_level
+digital_pressure_index,screen_time_hours + social_media_hours,Total paparan layar harian sebagai satu dimensi,Keduanya bergerak searah terhadap stress
+emotional_pressure_index,fatigue_level + (10 - mood_score),Tekanan emosional gabungan — fatigue tinggi + mood rendah = beban emosional tinggi,"fatigue & mood dua fitur paling kuat, arahnya berlawanan"
+sleep_category,"bins: <6='kurang', 6-8='cukup', >8='lebih'",Kategorisasi tidur sesuai threshold risk di rule stress_score,"Risk rule: tidur <6 jam = risiko tinggi, 7-8 jam = risiko rendah"
+activity_level,"bins: <15='rendah', 15-45='sedang', >45='tinggi'",Kategorisasi aktivitas fisik sesuai threshold trigger rule,Trigger: physical_activity_minutes < 15 = Low Physical Activity
+caffeine_category,"bins: <=200='normal', 200-350='tinggi', >350='sangat_tinggi'",Kategorisasi kafein sesuai threshold risk dan trigger rule,Risk: >200mg naik; Trigger: >350mg = High Caffeine Intake

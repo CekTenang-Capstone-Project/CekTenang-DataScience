@@ -1,0 +1,6 @@
+,average_stress_score,average_stress_score,average_sleep_hours,average_sleep_hours,average_screen_time,average_screen_time,average_study_hours,average_study_hours,high_stress_days,high_stress_days
+,mean,std,mean,std,mean,std,mean,std,mean,std
+stress_trend,,,,,,,,,,
+Decreasing,55.837,6.459,6.721,0.81,6.649,1.411,4.081,1.233,0.763,1.233
+Increasing,56.593,7.091,6.701,0.788,6.726,1.438,4.213,1.359,0.827,1.381
+Stable,56.237,6.774,6.75,0.784,6.757,1.451,4.137,1.323,0.663,1.328

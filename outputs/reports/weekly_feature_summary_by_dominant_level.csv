@@ -1,0 +1,6 @@
+,average_stress_score,average_stress_score,average_sleep_hours,average_sleep_hours,average_screen_time,average_screen_time,average_study_hours,average_study_hours,high_stress_days,high_stress_days
+,mean,std,mean,std,mean,std,mean,std,mean,std
+dominant_stress_level,,,,,,,,,,
+High,71.623,2.731,5.721,0.626,7.69,1.404,5.503,1.292,4.808,0.914
+Low,41.09,0.17,7.975,1.138,3.615,0.106,3.365,1.025,0.0,0.0
+Medium,55.225,5.641,6.8,0.754,6.668,1.419,4.051,1.262,0.45,0.802

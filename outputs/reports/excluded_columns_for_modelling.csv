@@ -1,0 +1,12 @@
+kolom,tabel_asal,alasan
+id,daily_activities,"Primary key — identifier teknis, bukan fitur"
+user_id,daily_activities,"Foreign key — identifier teknis, bukan fitur"
+activity_id,stress_predictions,Foreign key — identifier teknis
+activity_date,daily_activities,Timestamp — tidak relevan sebagai fitur tanpa feature engineering waktu
+created_at,daily_activities,Timestamp teknis
+updated_at,daily_activities,Timestamp teknis
+stress_score,stress_predictions,DATA LEAKAGE — stress_score adalah basis pembentukan stress_level
+recommendation_text,recommendations,Output sistem — bukan fitur input
+insight_text,insights,Output sistem — bukan fitur input
+weekly_summary_id,recommendations,Foreign key — identifier teknis
+stress_prediction_id,recommendations,Foreign key — identifier teknis
