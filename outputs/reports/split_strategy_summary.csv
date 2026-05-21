@@ -1,0 +1,3 @@
+split,n_rows,n_users,n_Low,n_Medium,n_High,pct_Low,pct_Medium,pct_High,strategy
+train,21256,240,627,18596,2033,2.94975536319157,87.48588633797516,9.564358298833271,GroupShuffleSplit(user_id)
+test,5323,60,113,4660,550,2.1228630471538605,87.54461769678753,10.332519256058612,GroupShuffleSplit(user_id)

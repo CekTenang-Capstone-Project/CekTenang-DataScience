@@ -1,0 +1,13 @@
+scenario,class,mixing_ratio,mixing_pct,status
+A_original_full,High,0.7117,71.2%,Overlap berat — SMOTE polos TIDAK direkomendasikan
+A_original_full,Low,0.9166,91.7%,Overlap berat — SMOTE polos TIDAK direkomendasikan
+A_original_full,Medium,0.0675,6.7%,Relatif aman — SMOTE masuk akal
+B_core_original,High,0.5121,51.2%,Overlap tinggi — uji BorderlineSMOTE atau SMOTE-Tomek
+B_core_original,Low,0.8188,81.9%,Overlap berat — SMOTE polos TIDAK direkomendasikan
+B_core_original,Medium,0.0621,6.2%,Relatif aman — SMOTE masuk akal
+C_original_engineered,High,0.6539,65.4%,Overlap berat — SMOTE polos TIDAK direkomendasikan
+C_original_engineered,Low,0.8791,87.9%,Overlap berat — SMOTE polos TIDAK direkomendasikan
+C_original_engineered,Medium,0.0656,6.6%,Relatif aman — SMOTE masuk akal
+D_core_selected_eng,High,0.5013,50.1%,Overlap tinggi — uji BorderlineSMOTE atau SMOTE-Tomek
+D_core_selected_eng,Low,0.7885,78.9%,Overlap berat — SMOTE polos TIDAK direkomendasikan
+D_core_selected_eng,Medium,0.064,6.4%,Relatif aman — SMOTE masuk akal

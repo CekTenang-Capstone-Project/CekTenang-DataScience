@@ -1,0 +1,5 @@
+scenario,n_features,macro_f1,balanced_accuracy,recall_Low,recall_High,accuracy,best_for_resampling
+A_original_full,13,0.6106,0.5607,0.115,0.5855,0.9222,False
+B_core_original,8,0.6403,0.5885,0.1858,0.6036,0.9207,False
+C_original_engineered,19,0.6567,0.6066,0.2035,0.64,0.9252,True
+D_core_selected_eng,13,0.6489,0.5999,0.2124,0.6145,0.9196,False

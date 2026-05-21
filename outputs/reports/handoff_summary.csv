@@ -1,0 +1,8 @@
+method,status,dataset_file,n_train_Low,n_train_Medium,n_train_High,macro_f1,balanced_accuracy,recall_Low,recall_Medium,recall_High,precision_Low,precision_High,notes
+no_resampling,baseline,train_no_resampling.csv,627,18596,2033,0.6365,0.5903,0.1858,0.9723,0.6127,0.5833,0.7472,"Baseline. Distribusi asli, tidak dimodifikasi."
+class_weight_balanced,comparison_only,,627,18596,2033,0.6145,0.5671,0.1327,0.9777,0.5909,0.6,0.7757,Tidak ada file output. Hanya metric pembanding.
+random_oversampler,recommended,train_random_oversampler.csv,18596,18596,18596,0.6828,0.6515,0.3009,0.9627,0.6909,0.5397,0.7238,"Duplikasi sample minoritas, tanpa interpolasi."
+smote,experimental,train_smote.csv,18596,18596,18596,0.7082,0.7193,0.4513,0.9429,0.7636,0.4722,0.6677,Low mixing 78.8% (overlap berat) — risiko synthetic noise.
+borderline_smote,recommended,train_borderline_smote.csv,18596,18596,18596,0.7025,0.7136,0.4425,0.9401,0.7582,0.4762,0.6505,Fokus sample dekat boundary. Lebih selektif dari SMOTE standar.
+smote_tomek,recommended,train_smote_tomek.csv,18595,18583,18584,0.706,0.7229,0.4602,0.9412,0.7673,0.4483,0.6677,SMOTE + Tomek cleaning. Oversample + undersample ringan.
+smote_full_engineered,experimental,train_smote_full_engineered.csv,18596,18596,18596,0.7085,0.7078,0.4159,0.9494,0.7582,0.4896,0.6904,SMOTE pada 19 fitur (Scenario C). Pembanding dampak full engineered set.
