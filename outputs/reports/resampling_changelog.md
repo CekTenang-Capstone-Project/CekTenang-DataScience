@@ -1,7 +1,7 @@
 
 # Resampling Changelog
 
-**Tanggal:** 2026-05-21
+**Tanggal:** 2026-05-23
 
 Notebook terkait:
 - 05_class_overlap_and_resampling_readiness
