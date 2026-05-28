@@ -3,5 +3,6 @@ numpy
 matplotlib
 jupyter
 nbformat
-sklearn
+scikit-learn   
 seaborn
+streamlit 
