@@ -14,6 +14,7 @@ pages = st.navigation([
     st.Page("pages/05.py", title="Resampling Readiness"),
     st.Page("pages/06.py", title="Resampling Experiment"),
     st.Page("pages/07.py", title="Resampling Summary"),
+    st.Page("pages/08.py", title="Hasil Modelling AI"),
 ])
 
 pages.run()
