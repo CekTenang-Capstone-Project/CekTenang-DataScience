@@ -3,6 +3,9 @@ numpy
 matplotlib
 jupyter
 nbformat
-scikit-learn   
+scikit-learn
 seaborn
-streamlit 
+streamlit
+statsmodels
+plotly
+imbalanced-learn   
