@@ -1,8 +1,14 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from pathlib import Path
 
 st.set_page_config(page_title="Resampling Experiment", layout="wide")
+
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
+DATA_DIR = PROJECT_ROOT / "data" / "processed"
+REPORTS_DIR = PROJECT_ROOT / "outputs" / "reports"
+FIGURES_DIR = PROJECT_ROOT / "outputs" / "figures"
 
 CLASS_COLORS  = {"Low": "#4CAF50", "Medium": "#FF9800", "High": "#F44336"}
 STATUS_COLORS = {
@@ -28,7 +34,7 @@ METRIC_LABEL = {
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("../../../outputs/reports/resampling_metric_comparison.csv")
+    return pd.read_csv(REPORTS_DIR / "resampling_metric_comparison.csv")
 
 results_df = load_data()
 
@@ -116,7 +122,7 @@ with tab3:
     st.subheader("Confusion Matrix")
     st.caption("Perbandingan confusion matrix untuk semua metode resampling.")
 
-    img_path = "../../../outputs/figures/resampling_diagnostics/07_confusion_matrix_all_methods.png"
+    img_path = FIGURES_DIR / "resampling_diagnostics/07_confusion_matrix_all_methods.png"
     try:
         st.image(img_path, use_container_width=True)
     except Exception:

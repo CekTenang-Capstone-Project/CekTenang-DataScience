@@ -1,14 +1,20 @@
 import streamlit as st
 import pandas as pd
+from pathlib import Path
 
 st.set_page_config(page_title="Student Stress Dashboard", layout="wide")
 
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
+DATA_DIR = PROJECT_ROOT / "data" / "processed"
+REPORTS_DIR = PROJECT_ROOT / "outputs" / "reports"
+FIGURES_DIR = PROJECT_ROOT / "outputs" / "figures"
+
 @st.cache_data
 def load_data():
-    daily  = pd.read_csv("../../../data/processed/daily_activities_clean.csv")
-    pred   = pd.read_csv("../../../data/processed/stress_predictions_clean.csv")
-    weekly = pd.read_csv("../../../data/processed/weekly_summaries_clean.csv")
-    rec    = pd.read_csv("../../../data/processed/recommendations_clean.csv")
+    daily  = pd.read_csv(DATA_DIR / "daily_activities_clean.csv")
+    pred   = pd.read_csv(DATA_DIR / "stress_predictions_clean.csv")
+    weekly = pd.read_csv(DATA_DIR / "weekly_summaries_clean.csv")
+    rec    = pd.read_csv(DATA_DIR / "recommendations_clean.csv")
     return daily, pred, weekly, rec
 
 daily, pred, weekly, rec = load_data()

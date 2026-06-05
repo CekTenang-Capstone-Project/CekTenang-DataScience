@@ -1,19 +1,25 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from pathlib import Path
 
 st.set_page_config(page_title="Feature Engineering Plan", layout="wide")
+
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
+DATA_DIR = PROJECT_ROOT / "data" / "processed"
+REPORTS_DIR = PROJECT_ROOT / "outputs" / "reports"
+FIGURES_DIR = PROJECT_ROOT / "outputs" / "figures"
 
 SEQ_COLORS  = ["#C6E3FA", "#1565C0"]
 DIV_COLORS  = ["#2E7D32", "#A5D6A7", "#EEEEEE", "#EF9A9A", "#B71C1C"]
 
 @st.cache_data
 def load_data():
-    daily_corr       = pd.read_csv("../../../outputs/reports/daily_feature_correlation_with_stress_score.csv")
-    daily_importance = pd.read_csv("../../../outputs/reports/daily_feature_importance_baseline.csv")
-    weekly_corr      = pd.read_csv("../../../outputs/reports/weekly_feature_correlation_with_average_stress_score.csv")
-    fe_plan          = pd.read_csv("../../../outputs/reports/feature_engineering_plan_from_eda.csv")
-    excluded         = pd.read_csv("../../../outputs/reports/excluded_columns_for_modelling.csv")
+    daily_corr       = pd.read_csv(REPORTS_DIR / "daily_feature_correlation_with_stress_score.csv")
+    daily_importance = pd.read_csv(REPORTS_DIR / "daily_feature_importance_baseline.csv")
+    weekly_corr      = pd.read_csv(REPORTS_DIR / "weekly_feature_correlation_with_average_stress_score.csv")
+    fe_plan          = pd.read_csv(REPORTS_DIR / "feature_engineering_plan_from_eda.csv")
+    excluded         = pd.read_csv(REPORTS_DIR / "excluded_columns_for_modelling.csv")
     return daily_corr, daily_importance, weekly_corr, fe_plan, excluded
 
 daily_corr, daily_importance, weekly_corr, fe_plan, excluded = load_data()

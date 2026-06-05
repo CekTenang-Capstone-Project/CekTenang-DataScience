@@ -1,8 +1,14 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from pathlib import Path
 
 st.set_page_config(page_title="Analisis Stres Harian", layout="wide")
+
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
+DATA_DIR = PROJECT_ROOT / "data" / "processed"
+REPORTS_DIR = PROJECT_ROOT / "outputs" / "reports"
+FIGURES_DIR = PROJECT_ROOT / "outputs" / "figures"
 
 WARNA_STRES = {"Low": "#4CAF50", "Medium": "#FF9800", "High": "#F44336"}
 
@@ -27,8 +33,8 @@ TRIGGERS = {
 
 @st.cache_data
 def load_data():
-    activities = pd.read_csv("../../../data/processed/daily_activities_clean.csv")
-    predictions = pd.read_csv("../../../data/processed/stress_predictions_clean.csv")
+    activities = pd.read_csv(DATA_DIR / "daily_activities_clean.csv")
+    predictions = pd.read_csv(DATA_DIR / "stress_predictions_clean.csv")
     return activities.merge(
         predictions[["activity_id", "stress_score", "stress_level"]],
         left_on="id", right_on="activity_id", how="inner"

@@ -1,8 +1,14 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from pathlib import Path
 
 st.set_page_config(page_title="Analisis Output Rekomendasi", layout="wide")
+
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
+DATA_DIR = PROJECT_ROOT / "data" / "processed"
+REPORTS_DIR = PROJECT_ROOT / "outputs" / "reports"
+FIGURES_DIR = PROJECT_ROOT / "outputs" / "figures"
 
 PRIORITY_COLORS = {"Low": "#4CAF50", "Medium": "#FF9800", "High": "#F44336"}
 PERIOD_COLORS   = {"daily": "#4C9BE8", "weekly": "#FF9800"}
@@ -10,7 +16,7 @@ CHART_COLOR     = "#4C9BE8"
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("../../../data/processed/recommendations_clean.csv")
+    return pd.read_csv(DATA_DIR / "recommendations_clean.csv")
 
 recommendations = load_data()
 

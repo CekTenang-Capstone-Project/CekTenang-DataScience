@@ -162,6 +162,16 @@ with tab1:
     ])
     st.dataframe(features, use_container_width=True, hide_index=True)
 
+    st.markdown(
+        """
+        <div class="risk-box">
+            <b>Audit:</b> angka overall accuracy cukup kuat, tapi jangan dipakai untuk klaim medis.
+            Model ini valid untuk monitoring dan refleksi berbasis data, bukan diagnosis kesehatan mental.
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
 with tab2:
     st.subheader("Performa per Kelas")
     left, right = st.columns([1.05, 1])

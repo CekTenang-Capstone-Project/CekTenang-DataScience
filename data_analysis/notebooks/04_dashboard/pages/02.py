@@ -4,8 +4,14 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from pathlib import Path
 
 st.set_page_config(page_title="Analisis Stres Mingguan", layout="wide")
+
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
+DATA_DIR = PROJECT_ROOT / "data" / "processed"
+REPORTS_DIR = PROJECT_ROOT / "outputs" / "reports"
+FIGURES_DIR = PROJECT_ROOT / "outputs" / "figures"
 
 TREND_ORDER   = ["Increasing", "Stable", "Decreasing"]
 LEVEL_ORDER   = ["Low", "Medium", "High"]
@@ -49,7 +55,7 @@ REFERENSI = {
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("../../../data/processed/weekly_summaries_clean.csv")
+    return pd.read_csv(DATA_DIR / "weekly_summaries_clean.csv")
 
 df = load_data()
 df["hsd_bin"] = pd.cut(

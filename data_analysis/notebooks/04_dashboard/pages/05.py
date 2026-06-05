@@ -1,17 +1,23 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from pathlib import Path
 
 st.set_page_config(page_title="Resampling Readiness", layout="wide")
+
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
+DATA_DIR = PROJECT_ROOT / "data" / "processed"
+REPORTS_DIR = PROJECT_ROOT / "outputs" / "reports"
+FIGURES_DIR = PROJECT_ROOT / "outputs" / "figures"
 
 CLASS_COLORS = {"Low": "#4CAF50", "Medium": "#FF9800", "High": "#F44336"}
 SEQ_COLORS   = ["#C6E3FA", "#1565C0"]
 
 @st.cache_data
 def load_data():
-    feature_set = pd.read_csv("../../../outputs/reports/feature_set_comparison.csv")
-    overlap     = pd.read_csv("../../../outputs/reports/class_overlap_diagnostic_summary.csv")
-    baseline    = pd.read_csv("../../../outputs/reports/baseline_model_without_resampling.csv")
+    feature_set = pd.read_csv(REPORTS_DIR / "feature_set_comparison.csv")
+    overlap     = pd.read_csv(REPORTS_DIR / "class_overlap_diagnostic_summary.csv")
+    baseline    = pd.read_csv(REPORTS_DIR / "baseline_model_without_resampling.csv")
     return feature_set, overlap, baseline
 
 feature_set, overlap, baseline = load_data()

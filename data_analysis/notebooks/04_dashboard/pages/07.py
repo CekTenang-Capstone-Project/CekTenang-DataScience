@@ -1,8 +1,14 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from pathlib import Path
 
 st.set_page_config(page_title="Resampling Summary", layout="wide")
+
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
+DATA_DIR = PROJECT_ROOT / "data" / "processed"
+REPORTS_DIR = PROJECT_ROOT / "outputs" / "reports"
+FIGURES_DIR = PROJECT_ROOT / "outputs" / "figures"
 
 STATUS_COLORS = {
     "recommended":     "#2E7D32",
@@ -31,7 +37,7 @@ RECALL_COLORS = {
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("../../../outputs/reports/resampling_metric_comparison.csv")
+    return pd.read_csv(REPORTS_DIR / "resampling_metric_comparison.csv")
 
 metrics = load_data()
 
