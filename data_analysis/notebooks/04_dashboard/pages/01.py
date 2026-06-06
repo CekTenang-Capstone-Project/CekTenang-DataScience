@@ -186,13 +186,16 @@ with st.expander("Lihat Referensi Kategori dan Rentang Fitur"):
         st.subheader("Referensi Rentang Fitur")
         st.dataframe(
             pd.DataFrame({
-                "Fitur": ["sleep_hours", "fatigue_level", "assignment_load", "deadline_pressure", "mood_score"],
+                "Fitur": ["study_hours","sleep_hours", "fatigue_level", "assignment_load", "deadline_pressure", "mood_score","screen_time","physical_activity_minutes"],
                 "Kategori": [
-                    "< 6 = Kurang | 6–8 = Ideal | > 8 = Panjang",
+                    "< 2 = Ringan | 2-5 = Sedang | > 5 = Intensif",
+                    "< 6 = Kurang | 6–8 = Ideal  | > 8 = Panjang",
                     "1–3 = Rendah | 4–7 = Sedang | 8–10 = Tinggi",
                     "1–3 = Ringan | 4–7 = Sedang | 8–10 = Berat",
                     "1–3 = Rendah | 4–7 = Sedang | 8–10 = Tinggi",
                     "1–3 = Rendah | 4–7 = Sedang | 8–10 = Tinggi",
+                    "< 3 = Rendah | 3-6 = Sedang | > 6 = Tinggi",
+                    "< 15 = Kurang Aktif | 15–45 = Cukup Aktif | > 45 = Sangat Aktif"
                 ],
             }),
             use_container_width=True, hide_index=True,
